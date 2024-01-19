@@ -6,7 +6,7 @@ class getRecentBlog {
     async getRecentBlog() {
         try {
             const initDbConnect: DbConnect = new DbConnect();
-            const data = await initDbConnect.query('SELECT *, DATE_FORMAT(DateSubmitted, "%m/%d/%Y") AS FormattedDate FROM posts ORDER BY DateSubmitted DESC');
+            const data = await initDbConnect.query('SELECT p.idPost, p.image, p.title, p.decscription, p.authorName, p.isProject, DATE_FORMAT(DateSubmitted, "%m/%d/%Y") AS FormattedDate FROM posts p ORDER BY DateSubmitted DESC');
             return data;
         } catch (error) {
             console.log('Error in class => getRecentBlog method => getRecentBlog: ', error);

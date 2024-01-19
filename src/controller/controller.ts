@@ -101,6 +101,31 @@ class controller {
             });
         };
     };
+
+    async handleGetDetailPosts(req: Request, res: Response): Promise<void> {
+        try {
+            const idPosts: number = Number(req.params.idPosts);
+            const initControllerServices = new controllerServices();
+            const data: any = await initControllerServices.handleGetDetailPostsServices(idPosts);
+            if (data) {
+                res.status(200).json({
+                    data: data,
+                    message: 'success!',
+                    errorCode: 0
+                });
+            } else {
+                res.status(200).json({
+                    message: 'failed!',
+                    errorCode: 1
+                });
+            };
+        } catch (error) {
+            console.log('Error in class => controller method => handleGetDetailPosts: ', error);
+            res.status(500).json({
+                error: 'Internal Server Error',
+            });
+        };
+    };
 };
 
 export default controller;
