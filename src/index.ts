@@ -2,7 +2,7 @@ import express, { Express } from "express";
 import dotenv from "dotenv";
 import viewEngine from "./configs/viewEngine";
 import router from "./routes/router";
-import dbconnect from "./database/dbconnect";
+import dbconnect from "./model/dbconnect";
 
 dotenv.config();
 
