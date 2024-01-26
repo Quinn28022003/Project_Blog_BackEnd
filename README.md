@@ -1,0 +1,2 @@
+B1: Sau khi clone project blog from github hãy chạy câu lệnh "npm install" để tải những library of project.
+B2: Chạy tiếp lệnh "npm run dev" để khơi động server và hãy test những routes được viết bằng postman.
